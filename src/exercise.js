@@ -1,3 +1,5 @@
 export function runCode(callback) {
-  // Tu código aquí 👈
+  setTimeout(() => {
+    callback();
+  }, 2000);
 }
