@@ -1,17 +1,23 @@
 import { runCode } from "./exercise";
 
-describe("tests", () => {
-  it("should return [1,2,3,4]", () => {
-    const arrayA = [1, 2];
-    const arrayB = [3, 4];
-    const rta = runCode(arrayA, arrayB);
-    expect(rta).toEqual([1, 2, 3, 4]);
+describe('tests', () => {
+
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
-  it("should return [1,2,3,4,5]", () => {
-    const arrayA = [1, 2];
-    const arrayB = [3, 4, 5];
-    const rta = runCode(arrayA, arrayB);
-    expect(rta).toEqual([1, 2, 3, 4, 5]);
+  it("should return 'Hello, World!' before 2s", async () => {
+    const mockCallback = jest.fn(x => 42 + x);
+    runCode(mockCallback);
+    expect(mockCallback).toHaveBeenCalledTimes(1);
+  });
+
+  it("should return call setTimeout with 2s", async () => {
+    const spyTimeout = jest.spyOn(global, "setTimeout");
+    const mockCallback = jest.fn(x => 42 + x);
+    runCode(mockCallback);
+    expect(mockCallback).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenLastCalledWith(expect.any(Function), 2000);
   });
 });

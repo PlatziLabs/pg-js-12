@@ -1,15 +1,23 @@
-En este desafío tienes un array de números, usando la función map debes retornar todos los números del array multiplicados por dos.
+En este desafío tienes que crear una función que reciba un `callback` pero este tiene que ser ejecutado 2s despues.
+
+> Nota: Debes usar la función `setTimeout` con el namespace `window` para poder monitorear su uso en la ejecución de pruebas, ejemplo:
+
+```js
+window.setTimeout(() => {
+  // code
+})
+```
 
 La solución debería tener un input y output como los siguientes:
 
 Input
 
 ```js
-solution([2, 4, 5, 6, 8]);
+runCode(() => console.log('Log after 2s'));
 ```
 
 Output
 
-```sh
-[4,8,10,12, 16]
+```js
+// Execute function 2s after
 ```
