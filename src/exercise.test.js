@@ -5,7 +5,7 @@ describe("tests", () => {
     jest.clearAllMocks();
   });
 
-  it("should return 'Hello, World!' before 2s", () => {
+  it("should return execute the callback", () => {
     jest
       .spyOn(global, "setTimeout")
       .mockImplementation((callback) => callback());
@@ -15,7 +15,7 @@ describe("tests", () => {
     expect(mockCallback).toHaveBeenCalledTimes(1);
   });
 
-  it("should return call setTimeout with 2s", () => {
+  it("should return execute the callback after 2s", () => {
     const spyTimeout = jest
       .spyOn(global, "setTimeout")
       .mockImplementation((callback) => callback());
